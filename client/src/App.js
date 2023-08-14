@@ -6,7 +6,6 @@ import {
   Switch,
 } from "react-router-dom";
 
-
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import { AuthContext } from "./shared/context/auth-context";
 import { useAuth } from "./shared/hooks/auth-hook";
@@ -72,17 +71,22 @@ const App = () => {
       <Router>
         <MainNavigation />
         <main>
-          <Suspense  fallback={
+          <Suspense
+            fallback={
               <div className="center">
                 <LoadingSpinner />
               </div>
-            }>
-
+            }
+          >
             {routes}
           </Suspense>
         </main>
       </Router>
       <Footer />
+      <script
+        async
+        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API_KEY}`}
+      ></script>
     </AuthContext.Provider>
   );
 };
