@@ -83,10 +83,6 @@ const App = () => {
         </main>
       </Router>
       <Footer />
-      <script
-        async
-        src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAP_API_KEY}`}
-      ></script>
     </AuthContext.Provider>
   );
 };
