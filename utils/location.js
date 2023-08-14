@@ -2,13 +2,12 @@ const axios = require("axios");
 const HttpError = require("../models/http-error");
 
 async function getCoordsForAddress(address) {
-  return { lat: 40.7484405, lng: -73.9878531 };
+  // return { lat: 40.7484405, lng: -73.9878531 };
 
-  /* 
   const response = await axios.get(
     `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
       address
-    )}&key=YOUR_API_KEY`
+    )}&key=${process.env.GOOGLE_MAP_API_KEY}`
   );
 
   const data = response.data;
@@ -23,8 +22,6 @@ async function getCoordsForAddress(address) {
 
   const coordinates = data.results[0].geometry.location;
   return coordinates;
-
-  */
 }
 
 module.exports = getCoordsForAddress;
